@@ -13,9 +13,9 @@ const Home: NextPage = () => {
       </Head>
       
       <div className='bg-gradient-to-br from-yellow-400 to-purple-600 min-h-screen flex flex-col items-center justify-center text-center'>
-        <div className=' p-2 rounded-xl'>
+        <div className='animate-pulse bg-gradient-to-br from-yellow-400 to-purple-600 p-2 rounded-xl'>
           <img
-          className='animate-pulse w-56 lg:w-64 rounded-xl object-cover'
+          className=' w-56  rounded-xl object-cover lg:w-64 bg-white/5'
           src='/nft-home.png'
           alt=''
           />
