@@ -34,7 +34,6 @@ const Home: NextPage = () => {
              whileHover={{
               scale: 1.1,
               
-              boxShadow: "0px 0px 8px rgb(255,255,255)",
             }}
               className='mt-10 text-pink-700 border-pink-700 border-2 bg-white/5 p-3 rounded-xl shadow-lg font-bold cursor-pointer'>
             Begin your Journey
