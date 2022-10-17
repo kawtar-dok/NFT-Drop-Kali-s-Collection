@@ -9,6 +9,7 @@
     "@thirdweb-dev/react": "^3.2.5",
     "@thirdweb-dev/sdk": "^3.2.5",
     "ethers": "^5.7.1",
+    "framer-motion": "^7.5.3",
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0"
