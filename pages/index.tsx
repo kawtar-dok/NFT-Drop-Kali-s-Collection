@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 
 const Home: NextPage = () => {
+  //const images = [{img:'/nft-home.png'},{img:'/nft-home-3.png'},{img:'/nft-home-2.png'},{img:'/nft-home-4.png'},{img:'/nft-home-5.png'}]
   return (
     <div className="">
       <Head>
@@ -13,6 +14,8 @@ const Home: NextPage = () => {
       </Head>
       
       <div className='bg-gradient-to-br from-yellow-400 to-purple-600 min-h-screen flex flex-col items-center justify-center text-center'>
+    
+       
         <div className='animate-pulse bg-gradient-to-br from-yellow-400 to-purple-600 p-2 rounded-xl'>
           <img
           className=' w-56  rounded-xl object-cover lg:w-64 bg-white/5'
@@ -20,6 +23,7 @@ const Home: NextPage = () => {
           alt=''
           />
         </div>
+        
         <div className='space-y-2 p-5 items-center justify-center'>
           <h1 className='text-4xl text-gray-200 tracking-[4px] font-bold text-center lg:text-6xl lg:font-extrabold '>
             Kali NFT Drop Collection
