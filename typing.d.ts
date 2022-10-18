@@ -1,6 +1,6 @@
 interface Image {
     asset: {
-        url: string
+        url: string,
     }
 }
 
