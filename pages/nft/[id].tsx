@@ -1,6 +1,8 @@
 import React from 'react'
 import {  useAddress, useDisconnect} from "@thirdweb-dev/react";
 import { useMetamask } from '@thirdweb-dev/react'
+import { GetServerSideProps } from 'next';
+import { sanityClient } from '../../sanity';
 function NFTDropPage() {
    
   // Auth
@@ -83,4 +85,46 @@ export default NFTDropPage
 
 //we want to use the wildcard [id ] 
 //its the forward slach parameter which is the [id].tsx in my code
-export const getServerSideProps: 
+export const getServerSideProps: GetServerSideProps = async ({ params}) => {
+  const query = `*[_type == "collection" && slug.current == $id][0]{
+    _id,
+    title,
+    address,
+    description,
+    nftCollectionName,
+    mainImage {
+      asset
+    },
+    previewImage {
+      asset
+    },
+    slug {
+      current
+    },
+    creator-> {
+      _id,
+      name,
+      address,
+      slug {
+         current
+      },
+    },
+  }`
+
+  const collection = await sanityClient.fetch(query,
+   {
+     id:params?.id
+  });
+  console.log("the collection of the current slug",collection)
+  
+  if (!collection) {
+    return {
+      notFound: true
+    }
+  }
+  return {
+    props: {
+      collection
+    }
+  }
+}
