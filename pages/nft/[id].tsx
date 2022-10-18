@@ -10,7 +10,7 @@ function NFTDropPage() {
   //---
   console.log(address)
   return (
-    <div className='flex h-screen flex-col lg:grid lg:grid-cols-10 '>
+    <div className='flex h-screen flex-col lg:grid lg:grid-cols-10'>
     {/* Left */}
       <div className='bg-gradient-to-br from-cyan-800 to-rose-500 lg:col-span-4'>
         <div className='flex flex-col items-center justify-center py-2 lg:min-h-screen'>
@@ -79,3 +79,8 @@ function NFTDropPage() {
 }
 
 export default NFTDropPage
+
+
+//we want to use the wildcard [id ] 
+//its the forward slach parameter which is the [id].tsx in my code
+export const getServerSideProps: 

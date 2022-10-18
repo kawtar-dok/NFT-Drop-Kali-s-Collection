@@ -1,5 +1,5 @@
-import { createCurrentUserHook, createClient } from "next-sanity"
-import createImageUrlBuilder from '@sanityimage-url'
+import { createClient } from "next-sanity"
+import createImageUrlBuilder from '@sanity/image-url'
 
 
 //A key thats allows us to connect to our sanity backend 
