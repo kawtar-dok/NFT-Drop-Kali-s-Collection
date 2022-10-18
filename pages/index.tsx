@@ -21,6 +21,7 @@ const Home = ({ collections }: Props) => {
       </Head>
       
     <div className='mx-auto max-w-7xl py-10 px-10 2xl:px-10 '>
+       <Link href={'/'}>
           <div className='flex top-0 left-0 mb-10 cursor-pointer space-x-2 items-center'>
             <img
              className='w-7 h-9 object-cover'
@@ -34,6 +35,7 @@ const Home = ({ collections }: Props) => {
                 {" "}NFT Market Place
             </h1>
          </div>
+        </Link>
 
    <main className=' bg-gradient-to-br from-yellow-400 to-purple-600
    p-10 shadow-xl shadow-rose-400/80'>      

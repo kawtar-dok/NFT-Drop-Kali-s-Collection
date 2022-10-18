@@ -2,8 +2,15 @@ import React from 'react'
 import {  useAddress, useDisconnect} from "@thirdweb-dev/react";
 import { useMetamask } from '@thirdweb-dev/react'
 import { GetServerSideProps } from 'next';
-import { sanityClient } from '../../sanity';
-function NFTDropPage() {
+import { sanityClient, urlFor } from '../../sanity';
+import { Collection } from '../../typing';
+import Link from 'next/link';
+
+interface Props {
+  collection: Collection
+}
+
+function NFTDropPage({ collection}: Props) {
    
   // Auth
     const connectWithMetamask = useMetamask();
@@ -18,18 +25,17 @@ function NFTDropPage() {
         <div className='flex flex-col items-center justify-center py-2 lg:min-h-screen'>
           <div className='bg-gradient-to-br from-yellow-400 to-purple-600 p-2 rounded-xl'>
            <img
-             className='w-44 rounded-xl object-cover
-             lg:h-96 lg:w-72'
-             src='https://links.papareact.com/8sg'
+             className='w-44 rounded-xl object-cover lg:h-96 lg:w-72'
+             src={urlFor(collection.previewImage).url()}
              alt=''
            />
           </div>
            <div className='space-y-2  text-center p-5 '>
                <h1 className='text-4xl text-white font-bold tracking-[10px] uppercase'>
-                KALI Apes
+                {collection.nftCollectionName}
                </h1>
                <h2 className='text-xl text-gray-300 tracking-[1px]'>
-                A collection of KALI Apes who live & breathe React!
+               {collection.description}
                </h2>
            </div>
         </div>
@@ -40,12 +46,15 @@ function NFTDropPage() {
        
          {/* Header */}
            <header className='flex items-center justify-between'>
+             <Link href={'/'}>
               <h1 className='w-52 cursor-pointer text-xl font-extralight 
               sm:w-80'>
                 The{" "}
                 <span className='font-extrabold underline decoration-pink-600/50'>KALI</span> 
                 {" "}NFT Market Place
               </h1>
+             </Link>
+
                <button 
                  onClick={() => (address ? disconnect() : connectWithMetamask())}
                  className='rounded-full bg-rose-400 text-white px-4 py-2 text-xs font-bold lg:px-5 lg:py-3 lg:text-base'>
@@ -61,12 +70,12 @@ function NFTDropPage() {
          {/* Content */}
             <div className='mt-10 flex flex-1 flex-col items-center space-y-6 text-center lg:justify-center lg:space-y-0'>
                 <img
-                className='w-80 object-cover pb-10 lg:h-48'
-                src='https://links.papareact.com/bdy'
+                className='w-80 object-cover pb-10 lg:h-64'
+                src={urlFor(collection.mainImage).url()}
                 alt=''
                 />
                 <h1 className='text-3xl font-bold lg:text-5xl lg:font-extrabold'>
-                    The KALI Ape Creative Club | NFT Drop
+                    {collection.title}
                 </h1>
                 <p className='pt-2 text-xl text-green-500'>13 /21 NFT's claimed</p>
             </div>
