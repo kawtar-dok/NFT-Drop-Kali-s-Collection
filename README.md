@@ -1,3 +1,5 @@
+create your NFT collection and launch to OpenSea and a minting website
+
 In this Project i did used :
 React.js| Next.js | Typescript | Sanity CMS | Tailwind CSS | Thirdweb | NFT Minting | Blockchain 
 
