@@ -1,4 +1,7 @@
-# Next.js + Tailwind CSS Example
+In this Project i did used :
+React.js| Next.js | Typescript | Sanity CMS | Tailwind CSS | Thirdweb | NFT Minting | Blockchain 
+
+# Next.js + Tailwind CSS 
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
 
